@@ -2,9 +2,13 @@
 
 include 'db.php';
 session_start();
+if (isset($_SESSION['username'])) {
+    header("Location: ../index.php");
+}
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+
 
 $query = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username' AND password = '$password'");
 
