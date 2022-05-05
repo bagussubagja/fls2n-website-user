@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  color: white;
+  z-index: 3;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(18, 18, 18, 0) 90%
+  );
+}
+
+.navbar > img {
+  width: 40px;
+  height: 40px;
+  padding: 12px 0px 0px 12px;
+}
+
+.nav {
+  float: right;
+  display: flex;
+  padding-top: 15px;
+}
+
+.navbar > ul {
+  float: right;
+}
+
+.navbar ul li {
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+  padding-right: 25px;
+  color: #f1f1f1;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar ul li a:hover {
+  text-decoration: none;
+  color: #4149df;
+}
+
+.Video {
+  margin-bottom: 60px;
+  padding-top: 5pc;
+  padding-left: 67px;
+}
+
+.info {
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1pc;
+}
+
+.info h1 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.info h3 {
+  font-size: 15px;
+  font-weight: 100;
+  color: #aaaaaa;
+}
+
+.desc-mov {
+  margin-top: 40px;
+  font-size: 15px;
+  color: #aaaaaa;
+  width: 650px;
+}
+
+.desc-mov h2 {
+  color: white;
+}
+
+.desc-mov p {
+  font-size: 15px;
+  color: #aaaaaa;
+  display: flex;
+}
+
+.icron {
+  width: 300px;
+  display: flex;
+  float: right;
+  padding-top: 10px;
+  padding-left: 150px;
+}
+
+.info .icron {
+  justify-self: end;
+  margin-left: 100px;
+}
+
+.icron img {
+  width: 40px;
+  height: 40px;
+}
+
+.section2 h2 {
+  color: white;
+}
+
+.Rekomendasi {
+  padding-left: 67px;
+}
+
+.movie-view-thumbnail {
+  display: flex;
+}
+
+.movie-view3 {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.movie-view3 img {
+  width: 400px;
+  height: auto;
+  border-radius: 25px;
+  margin-right: 25px;
+}
+
+/* Slideshow container */
+/* .slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+} */
+
+/* Hide the images by default */
+
+.mySlides {
+  /* display: flex; */
+  position: relative;
+}
+
+.movie-view-thumbnail {
+  overflow-x: auto;
+  overflow-x: hidden;
+  display: flex;
+}
+
+/* .movie-view-thumbnail::-webkit-scrollbar {
+  width: 1em;
+}
+
+.movie-view-thumbnail::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.movie-view-thumbnail::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey; */
+/* } */
+
+/* Caption text */
+/* .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+/* .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+} */ 
+
+.footer {
+  height: 60vh;
+  color: white;
+  margin: 100px 0px 0px 0px;
+}
+
+.footer-up {
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer1 {
+  padding: 0px 50px 0px 50px;
+  /* float: left; */
+  margin-left: 5%;
+  position: relative;
+  width: 60%;
+}
+
+.footer li {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0px 0px 15px 0px;
+}
+
+.footer1 span {
+  width: 30px;
+  height: 30px;
+  /* float: left; */
+}
+
+.footer1 img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.footer2 {
+  /* float: left; */
+  position: relative;
+  width: 20%;
+}
+
+.footer3 {
+  /* float: left; */
+  position: relative;
+  width: 30%;
+  margin-left: 150px;
+}
+
+.footer-bottom {
+  text-align: center;
+  height: 50px;
+}
+
+.footer-bottom p{
+  color: grey;
+}

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mainlogin {
+  background-image: url("../assets/image/background-login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #121212;
+  height: 100vh;
+  width: auto;
+  display: flex;
+}
+
+.darkbg {
+  height: 100vh;
+  width: 100%;
+  background-color: #121212;
+  position: absolute;
+  opacity: 60%;
+}
+
+.containerlogin {
+  height: 440px;
+  width: 370px;
+  margin: auto;
+  background-color: #121212;
+  border-radius: 24px;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  padding-top: 20px;
+}
+
+input {
+  border-radius: 8px;
+  padding: 8px 0px;
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+  background-color: #242323;
+  border: 0px;
+  padding-left: 10px;
+  color: white;
+}
+
+.tulisan {
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+#buttonlogin {
+  padding: 8px 0px;
+  border-radius: 14px;
+  width: 80%;
+  background-color: #4149df;
+  color: white;
+  margin-bottom: 37px;
+  margin-top: 20px;
+  border: 0px;
+}
+
+#buttonlogin:hover {
+  background-color: hsl(237, 72%, 62%);
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.loginhover {
+  color: #4149df;
+}
+
+.loginhover:hover {
+  color: hsl(237, 71%, 62%);
+  transition: all ease 0.3s;
+}

@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* ROOT */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  color: white;
+  z-index: 3;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(18, 18, 18, 0) 90%
+  );
+}
+
+.navbar > img {
+  width: 40px;
+  height: 40px;
+  padding: 7px 0px 0px 7px;
+}
+
+.nav {
+  float: right;
+  display: flex;
+  padding-top: 15px;
+}
+
+.navbar > ul {
+  float: right;
+}
+
+.navbar ul li {
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+  padding-right: 25px;
+  color: #f1f1f1;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar ul li a:hover {
+  text-decoration: none;
+  color: #4149df;
+}
+
+/* About Us  */
+#main1 {
+  display: flex;
+  flex-direction: row;
+  height: 75vh;
+  width: 100%;
+  color: white;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.main-text {
+  width: 500px;
+}
+
+.main-text h1 {
+  font-size: 2rem;
+  color: white;
+  margin: 0px 0px 10px 0px;
+  line-height: 60px;
+}
+
+.main-text p {
+  color: #747474;
+  text-align: justify;
+}
+
+#typing-text {
+  width: 14.5ch;
+  animation: typing 2s steps(15), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+  border-right: 3px solid;
+  font-family: poppins;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#about-me {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: auto auto 50px auto;
+}
+
+.about-text {
+  width: 500px;
+}
+
+.about-img {
+  width: 400px;
+  height: 400px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.vertical-line {
+  border-left: 3px solid grey;
+  height: 500px;
+}
+
+.about-box {
+  display: flex;
+  margin: 25px 0px;
+}
+
+.about-box-text p {
+  color: #fafafa;
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.team-class {
+  margin-top: 100px;
+}
+
+.bio-member {
+  float: right;
+  padding-right: 100px;
+  color: #121212;
+  margin-left: 50px;
+  margin-top: 35px;
+}
+
+.bio-member h1 {
+  font-size: 32px;
+}
+
+.bio-member p {
+  text-align: justify;
+  color: #cccccc;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 65px;
+  margin-right: 100px;
+  margin-left: 100px;
+  color: white;
+}
+
+.pict img {
+  width: 261px;
+  height: 275px;
+}
+
+.testi-heading {
+  color: white;
+  font-size: 2rem;
+  margin: 0px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-left: 100px;
+  font-size: 32px;
+}
+
+.testi-heading p {
+  color: grey;
+  font-size: 16px;
+  /* margin-bottom: 25px; */
+}
+
+.member {
+  /* margin-top: 40px; */
+  font-size: 14px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.member button {
+  border: none;
+  color: white;
+  background-color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.member button:hover {
+  color: #4149df;
+  transition: all 0.3s;
+}
+
+.social-links {
+  margin-left: 1%;
+}
+
+.social-links a {
+  font-size: 25px;
+  color: white;
+}
+
+.social-links a:hover {
+  color: #4149df;
+  transition: all ease 0.3s;
+}
+
+.testimoni-text {
+  color: grey;
+}
+
+/* FOOTER */
+.footer {
+  height: 60vh;
+  color: white;
+  margin: 100px 0px 0px 0px;
+}
+
+.footer-up {
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer1 {
+  padding: 0px 50px 0px 50px;
+  /* float: left; */
+  margin-left: 5%;
+  position: relative;
+  width: 60%;
+}
+
+.footer li {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0px 0px 15px 0px;
+}
+
+.footer1 span {
+  width: 30px;
+  height: 30px;
+  /* float: left; */
+}
+
+.footer1 img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.footer2 {
+  /* float: left; */
+  position: relative;
+  width: 20%;
+}
+
+.footer3 {
+  /* float: left; */
+  position: relative;
+  width: 30%;
+  margin-left: 150px;
+}
+
+.footer-bottom {
+  text-align: center;
+  height: 50px;
+}
+
+.modal {
+  transition: all 0.3s;
+  transform: translateY(-150%);
+  /* display: none; Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  background-color: hsl(0, 0%, 90%);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 30px;
+}
+
+.modal.active {
+  transform: translateY(0%);
+}
+
+.modal-content p {
+  color: black;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-bottom p{
+  color: grey;
+}
