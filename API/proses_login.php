@@ -21,5 +21,9 @@ if ($result > 0) {
 
     header("location: ../index.php");
 } else {
-    header("location: login.html");
+    echo "
+        <script>
+            alert('Username atau Password salah!');
+            window.location.href = '../html/login.html';
+        </script>";
 }

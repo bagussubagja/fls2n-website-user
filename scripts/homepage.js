@@ -19,3 +19,8 @@ scrollContainer3.addEventListener("wheel", (evt) => {
     evt.preventDefault();
     scrollContainer3.scrollLeft += evt.deltaY;
 });
+
+function menuToggle() {
+const toggleMenu = document.querySelector(".menu");
+toggleMenu.classList.toggle("active");
+}

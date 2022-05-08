@@ -14,17 +14,38 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nonton Film Dimana Aja</title>
   <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
   <div class="navbar">
     <img src="assets/image/logo-rounded.png" alt="Logo" />
     <ul>
-      <li>
-        <?php
-        echo $_SESSION['username'];
-        ?>
-      </li>
+      <div class="action">
+        <div class="profile" onclick="menuToggle();">
+          <img src="/assets/image/alif.png" />
+        </div>
+        <div class="menu">
+          <ul>
+            <li style="color: black; justify-content:center;"><?php echo $_SESSION['username']; ?></li>
+            <li>
+              <i class="fa-solid fa-user ico"></i><a href="#">My profile</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-user-pen ico"></i><a href="#">Edit profile</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-inbox ico"></i><a href="#">Inbox</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-gear ico"></i><a href="#">Setting</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-arrow-right-from-bracket ico"></i><a href="/API/logout.php">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <li></li>
     </ul>
     <ul class="nav">
@@ -32,7 +53,6 @@ if (!isset($_SESSION['username'])) {
       <li><a href="./html/about_us.html">About</a></li>
       <li><a href="">Movies</a></li>
       <li><a href="">Watchlist</a></li>
-      <li><a href="API/logout.php">Log Out</a></li>
       <li><img src="assets/image/Notification.png" alt="" /></li>
       <li><img src="assets/image/Search.png" alt="" /></li>
     </ul>
