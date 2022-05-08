@@ -15,6 +15,10 @@
         <h1>Selamat Datang!</h1>
         <p class="tulisan">Login - FLS2N Gallery Website</p>
 
+        <div id="salahpass">
+          
+        </div>
+
         <form action="../API/proses_login.php" method="POST">
           <input
             type="text"
@@ -35,7 +39,7 @@
           />
           <p class="forgot"><a href="" class="daftarhover">Lupa kata sandi?</a></p>
 
-          <button id="buttonlogin" type="submit">
+          <button id="buttonlogin" type="submit" onclick="validasi()">
             Masuk Sekarang
           </button>
 
@@ -46,6 +50,6 @@
         </form>
       </div>
     </div>
-    <!-- <script src="script.js"></script> -->
+    <script src="../scripts/validasiLogin.js"></script>
   </body>
 </html>
