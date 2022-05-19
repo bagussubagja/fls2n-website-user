@@ -49,7 +49,7 @@ if (!isset($_SESSION['username'])) {
       <li></li>
     </ul>
     <ul class="nav">
-      <li><a href="homepage.html">Home</a></li>
+      <li><a href="index.php">Home</a></li>
       <li><a href="./html/about_us.html">About</a></li>
       <li><a href="">Movies</a></li>
       <li><a href="">Watchlist</a></li>
