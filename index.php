@@ -27,15 +27,12 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="menu">
           <ul>
-            <li style="color: black; justify-content:center;"><?php echo $_SESSION['username']; ?></li>
+            <li style="color: black; justify-content:center;"><?php echo $_SESSION['nama']; ?></li>
             <li>
               <i class="fa-solid fa-user ico"></i><a href="#">My profile</a>
             </li>
             <li>
               <i class="fa-solid fa-user-pen ico"></i><a href="#">Edit profile</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-inbox ico"></i><a href="#">Inbox</a>
             </li>
             <li>
               <i class="fa-solid fa-gear ico"></i><a href="#">Setting</a>
@@ -53,8 +50,6 @@ if (!isset($_SESSION['username'])) {
       <li><a href="./html/about_us.html">About</a></li>
       <li><a href="">Movies</a></li>
       <li><a href="">Watchlist</a></li>
-      <li><img src="assets/image/Notification.png" alt="" /></li>
-      <li><img src="assets/image/Search.png" alt="" /></li>
     </ul>
   </div>
 
