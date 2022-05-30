@@ -19,6 +19,7 @@ $row = mysqli_fetch_assoc($query);
 
 if ($result > 0) {
     session_start();
+    $_SESSION['id_login'] = $row['id'];
     $_SESSION['username'] = $username;
     $_SESSION['name'] = $row['name'];
     $_SESSION['status'] = "LOGGED_IN";
