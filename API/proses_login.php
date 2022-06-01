@@ -24,7 +24,7 @@ if ($result > 0) {
     $_SESSION['name'] = $row['name'];
     $_SESSION['status'] = "LOGGED_IN";
 
-    header("location: ../index.php");
+    header("location: ../html/profile.php");
 } else {
     echo "
         <script>

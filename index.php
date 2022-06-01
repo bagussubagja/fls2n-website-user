@@ -4,6 +4,9 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header("Location: /html/login.php");
 }
+  $temp_profName = $_GET['id'];
+  $_SESSION['profName'] = $temp_profName;
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +31,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="menu">
           <ul>
-            <li style="color: black; justify-content:center;"><?php echo $_SESSION['name']; ?></li>
+            <li style="color: black; justify-content:center;"><?php echo $_SESSION['profName']; ?></li>
             <li>
               <i class="fa-solid fa-user ico"></i><a href="#">My profile</a>
             </li>

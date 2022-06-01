@@ -5,6 +5,8 @@ session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: /html/login.php");
 }
+
+$result = mysqli_query($connect, "SELECT * FROM profile WHERE id_login = '" . $_SESSION['id_login'] . "'");
 ?>
 
 <!DOCTYPE html>
@@ -144,7 +146,23 @@ if (!isset($_SESSION['username'])) {
         <div class="containerlogin">
             <h1>Pilih Profile</h1>
             <hr>
-            <div class="container-profile">
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="container-profile">';
+                    echo "<a href='../index.php?id=" . $row['nama_profile'] . "'>";
+                    echo '<div class="profile-item">';
+                    echo '<img src="../asset/image/bagus.png" alt="">';
+                    echo '<p style="color: white;">' . $row['nama_profile'] . '</p>';
+                    echo '</div>';
+                    echo '</a>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<h2>Tidak ada profile</h2>';
+            }
+            ?>
+            <!-- <div class="container-profile">
                 <div class="profile-item">
                     <img src="../assets/image/alif.png" alt="profile1" />
                     <p>Profile 1</p>
@@ -157,14 +175,15 @@ if (!isset($_SESSION['username'])) {
                     <img src="../assets/image/faja.png" alt="profile3" />
                     <p>Profile 3</p>
                 </div>
-            </div>
+            </div> -->
             <button class="button-profile" onclick="showModal()" id="myButton">Add Profile</button>
             <div id="myModal" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <div class="form-modal">
-                        <form method="post">
+                        <form method="post" action="../API/addProfile.php">
+                            <label for="nama">Nama Profile</label>
                             <input style="width: 200px;" type="text" name="nama_profile" id="" placeholder="Nama Profile">
                             <input style="width: 200px; background-color: #4149df; cursor: pointer;" type="submit" name="submit">
                         </form>
