@@ -8,6 +8,86 @@
   scroll-behavior: smooth;
 }
 
+/* ========================================== */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3,100%);
+  overflow:hidden;
+  scroll-behavior: smooth;
+}
+
+section {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin: 10px 0;
+  padding-left: 40px;
+}
+    
+.item_kj {
+  padding: 0 2px;
+  transition: 250ms all;      
+}
+
+.item_kj img {
+  width: 380px;
+  height: 209px;
+  border-radius: 20px;
+  margin-right: 5px;
+  position: relative;
+}
+
+.item_kj:hover { 
+    margin: 0 40px;
+    transform: scale(1.1);
+}
+
+.item_bd {
+  padding: 0 2px;
+  transition: 250ms all;      
+}
+
+.item_bd img {
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  margin-right: 5px;
+  position: relative;
+  object-fit: cover;
+}
+
+.item_bd:hover { 
+  margin: 0 40px;
+  transform: scale(1.1);
+}
+    
+.arrow__btn {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.arrow__btn:nth-of-type(1) {
+    top:0; bottom:0; left:0;
+  }
+.arrow__btn:nth-of-type(2) {
+    top:0; bottom:0; right: 0;
+  }
+
+/* Remove the arrow for Mobile */
+@media only screen and (max-width: 600px) {
+  a.arrow__btn {
+    display:none;
+  }
+}
+/* ========================================== */
+
 body {
   background-color: #121212;
 }
@@ -161,7 +241,6 @@ body {
   text-decoration: none;
   float: right;
   margin-right: 20px;
-  margin-top: 12px;
   color: white;
 }
 
@@ -170,7 +249,7 @@ body {
 }
 
 .kumpulanjuara {
-  padding-left: 67px;
+  padding-left: 60px;
 }
 
 .baruditambahkan {
@@ -199,17 +278,17 @@ h2 {
 
 .movie-view-thumbnail {
   overflow-x: hidden;
-  display: flex;
+  display: grid;
 }
 
 .movie-view-thumbnail2 {
   overflow-x: hidden;
-  display: flex;
+  display: grid;
 }
 
 .movie-view-thumbnail3 {
   overflow-x: hidden;
-  display: flex;
+  display: grid;
 }
 
 .movie-view1 {

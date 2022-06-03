@@ -6,7 +6,8 @@ if (!isset($_SESSION['username'])) {
 }
   $temp_profName = $_GET['id'];
   $_SESSION['profName'] = $temp_profName;
-
+  include_once './API/db.php';
+  include_once './API/proses_db_index.php';
 ?>
 
 <!DOCTYPE html>
@@ -72,139 +73,340 @@ if (!isset($_SESSION['username'])) {
       <a href="https://bantenhits.com/2021/06/23/mengenal-alina-gadis-cantik-di-cilegon-getol-bereksperimen-hingga-bermimpi-jadi-entrepreneur-sukses-di-tanah-air/"><button class="button-2" role="button">See More</button></a>
     </div>
     <div class="kumpulanjuara">
-      <div class="section1">
-        <div class="see-more"><a href="./html/kategori2.html">See More...</a></div>
+      <div class="section">
+        <div class="see-more"><a href="./html/kategori2.html">See More...</a>
+        </div>
         <h2>Kumpulan Juara</h2>
-
-        <div class="movie-view-thumbnail">
-          <div class="movie-view1">
-            <div class="mySlides fade">
-              <img src="assets/image/titikbalik.jpg" alt="" />
+        <div class="wrapper">
+          <section id="section1_kj">
+            <a href="#section2_kj" class="arrow__btn">‹</a>
+            <div class="item_kj">
+              <img src="assets/image/titikbalik.jpg"/>
               <div class="text-movie-view1">
-                <h2>Titik Balik</h2>
-                <p>Juara 1 FLS2N Tingkat Nasional Aceh 2018</p>
-                <p>2018 - 4m23d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj1)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
               </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/robot.png" alt="" />
+            <div class="item_kj">
+              <img src="assets/image/robot.jpg"/>
               <div class="text-movie-view1">
-                <h2>Robot</h2>
-                <p>Juara 1 FLS2N 2019 Kota Bandung</p>
-                <p>2019 - 5m01d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj2)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      
+            </div>
+            <div class="item_kj">
+              <img src="assets/image/titikterang.png"/>
+              <div class="text-movie-view1">
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj3)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      
+            </div>
+            <div class="item_kj">
+              <img src="assets/image/Olak.png"/>
+              <div class="text-movie-view1">
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj4)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      
+            </div>
+            <a href="#section2_kj" class="arrow__btn">›</a>
+          </section>
+          <section id="section2_kj">
+            <a href="#section1_kj" class="arrow__btn">‹</a>
+            <div class="item_kj">
+              <img src="assets/image/janggal.jpg"/>
+              <div class="text-movie-view1">
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj5)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
               </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/moral.jpg" alt="" />
+            <div class="item_kj">
+              <img src="assets/image/patuisalang.jpg"/>
               <div class="text-movie-view1">
-                <h2>Moral</h2>
-                <p>Juara 1 FLS2N Tingkat Provinsi Bali</p>
-                <p>2017 - 7m07d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj6)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
               </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/Olak.png" alt="" />
+            <div class="item_kj">
+              <img src="assets/image/garis akhir.jpg"/>
               <div class="text-movie-view1">
-                <h2>Olak</h2>
-                <p>Juara 1 FLS2N Tingkat Nasional</p>
-                <p>2020 - 4m45d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_kj7)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      </div>
+            <div class="item_kj">
+              <img src="assets/image/bentala.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_kj8)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>
               </div>
-            </div>
-          </div>
+            <a href="#section1_kj" class="arrow__btn">›</a>
+          </section>
         </div>
       </div>
     </div>
     <div class="baruditambahkan">
-      <div class="section1">
-        <div class="see-more"><a href="./html/kategori2.html">See More...</a></div>
+      <div class="section">
+        <div class="see-more"><a href="./html/kategori2.html">See More...</a>
+        </div>
         <h2>Baru Ditambahkan</h2>
-        <div class="movie-view-thumbnail2">
-          <div class="movie-view2">
-            <div class="mySlides fade">
-              <img src="assets/image/sukma.png" alt="" />
+        <div class="wrapper">
+          <section id="section1_bd">
+            <a href="#section2_bd" class="arrow__btn">‹</a>
+            <div class="item_bd">
+              <img src="assets/image/baur.jpg"/>
               <div class="text-movie-view1">
-                <h2>Sukma</h2>
-                <p>SMK Al Amanah</p>
-                <p>2021 - 4m23d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd1)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
               </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/change.jpg" alt="" />
+            <div class="item_bd">
+              <img src="assets/image/akudankamu.jpg"/>
               <div class="text-movie-view1">
-                <h2>Change</h2>
-                <p>SMAN 1 Tayu</p>
-                <p>2021 - 3m50d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd2)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      
+            </div>
+            <div class="item_bd">
+              <img src="assets/image/berproses.jpg"/>
+              <div class="text-movie-view1">
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd3)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      
+            </div>
+            <div class="item_bd">
+              <img src="assets/image/isoman.png"/>
+              <div class="text-movie-view1">
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd4)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      
+            </div>
+            <a href="#section2_bd" class="arrow__btn">›</a>
+          </section>
+          <section id="section2_bd">
+            <a href="#section1_bd" class="arrow__btn">‹</a>
+            <div class="item_bd">
+              <img src="assets/image/jendela dunia.jpg"/>
+              <div class="text-movie-view1">
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd5)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
               </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/janggal.jpg" alt="" />
+            <div class="item_bd">
+              <img src="assets/image/new-shoes.jpg"/>
               <div class="text-movie-view1">
-                <h2>Janggal</h2>
-                <p>SMAN 2 KS Cilegon</p>
-                <p>2021 - 7m07d</p>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd6)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
               </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/patuisalang.jpg" alt="" />
+            <div class="item_bd">
+              <img src="assets/image/change.jpg"/>
               <div class="text-movie-view1">
-                <h2>Patui Salang</h2>
-                <p>SMKN 2 Majene</p>
-                <p>2022 - 4m45d</p>
-              </div>
+                <?php
+                while ($row = mysqli_fetch_assoc($query_bd7)) {
+                  echo "<h2>" . $row['name'] . "</h2>";
+                  echo "<p>" . $row['archievement'] . "</p>";
+                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                }
+                ?>
+              </div>      </div>
+            <div class="item_bd">
+              <img src="assets/image/sukma.png"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_bd8)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>
             </div>
-            <div class="mySlides fade">
-              <img src="assets/image/garis akhir.jpg" alt="">
-              <div class="text-movie-view1">
-                <h2>Garis Akhir</h2>
-                <p>SMA Presiden</p>
-                <p>2022 - 4m23d</p>
-              </div>
-            </div>
-          </div>
+            <a href="#section1_bd" class="arrow__btn">›</a>
+          </section>
         </div>
       </div>
     </div>
     <div class="rekomendasi">
-      <div class="section1">
-        <div class="see-more"><a href="./kategori2.html">See More...</a></div>
-        <h2>Rekomendasi</h2>
-        <div class="movie-view-thumbnail3">
-          <div class="movie-view1">
-            <div class="mySlides fade">
-              <img src="assets/image/ruangpublik.jpg" alt="" />
-              <div class="text-movie-view1">
-                <h2>Titik Balik</h2>
-                <p>Juara 1 FLS2N Tingkat Nasional Aceh 2018</p>
-                <p>2018 - 4m23d</p>
+      <div class="section">
+          <div class="see-more"><a href="./html/kategori2.html">See More...</a>
+          </div>
+          <h2>Rekomendasi</h2>
+          <div class="wrapper">
+            <section id="section1_rek">
+              <a href="#section2_rek" class="arrow__btn">‹</a>
+              <div class="item_kj">
+                <img src="assets/image/moral.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek1)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>
               </div>
-            </div>
-            <div class="mySlides fade">
-              <img src="assets/image/new-shoes.jpg" alt="" />
-              <div class="text-movie-view1">
-                <h2>New Shoes</h2>
-                <p>Honorable Mention FLS2N Provinsi Banten</p>
-                <p>2021 - 3m12d</p>
+              <div class="item_kj">
+                <img src="assets/image/majutanpabatas.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek2)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>      
               </div>
-            </div>
-            <div class="mySlides fade">
-              <img src="assets/image/jendela dunia.jpg" alt="" />
-              <div class="text-movie-view1">
-                <h2>Jendela Dunia</h2>
-                <p>Juara 1 FLS2N t Provinsi Kalimantan Barat</p>
-                <p>2021 - 3m35d</p>
+              <div class="item_kj">
+                <img src="assets/image/abadi.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek3)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>      
               </div>
-            </div>
-            <div class="mySlides fade">
-              <img src="assets/image/isoman.png" alt="" />
-              <div class="text-movie-view1">
-                <h2>Isoman</h2>
-                <p>Juara 1 FLS2N Provinsi Banten</p>
-                <p>2021 - 3m29d</p>
+              <div class="item_kj">
+                <img src="assets/image/ngajenan.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek4)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>      
               </div>
-            </div>
+              <a href="#section2_rek" class="arrow__btn">›</a>
+            </section>
+            <section id="section2_rek">
+              <a href="#section1_rek" class="arrow__btn">‹</a>
+              <div class="item_kj">
+                <img src="assets/image/sukma.png"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek5)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>
+              </div>
+              <div class="item_kj">
+                <img src="assets/image/change.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek6)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>
+              </div>
+              <div class="item_kj">
+                <img src="assets/image/janggal.jpg"/>
+                <div class="text-movie-view1">
+                  <?php
+                  while ($row = mysqli_fetch_assoc($query_rek7)) {
+                    echo "<h2>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['archievement'] . "</p>";
+                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                  }
+                  ?>
+                </div>      </div>
+              <div class="item_kj">
+                <img src="assets/image/patuisalang.jpg"/>
+                  <div class="text-movie-view1">
+                    <?php
+                    while ($row = mysqli_fetch_assoc($query_rek8)) {
+                      echo "<h2>" . $row['name'] . "</h2>";
+                      echo "<p>" . $row['archievement'] . "</p>";
+                      echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                    }
+                    ?>
+                  </div>
+              </div>
+              <a href="#section1_rek" class="arrow__btn">›</a>
+            </section>
           </div>
         </div>
-      </div>
     </div>
     <div class="footer">
       <div class="footer-up">
