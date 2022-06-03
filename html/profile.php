@@ -156,6 +156,7 @@ $result = mysqli_query($connect, "SELECT * FROM profile WHERE id_login = '" . $_
                     echo '<p style="color: white;">' . $row['nama_profile'] . '</p>';
                     echo '</div>';
                     echo '</a>';
+                    echo '<a href="../API/deleteProfile.php?nama_profile=' . $row['nama_profile'] . '" class="button-profile" >delete</a>';
                     echo '</div>';
                 }
             } else {
