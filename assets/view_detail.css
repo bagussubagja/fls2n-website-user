@@ -1,5 +1,63 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+/* ========================================== */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3,100%);
+  overflow:hidden;
+  scroll-behavior: smooth;
+}
+
+section {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin: 10px 0;
+  padding-left: 40px;
+}
+    
+.item_kj {
+  padding: 0 2px;
+  transition: 250ms all;      
+  text-decoration: none;
+}
+
+.item_kj img {
+  width: 380px;
+  height: 209px;
+  border-radius: 20px;
+  margin-right: 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+.item_kj:hover { 
+    margin: 0 40px;
+    transform: scale(1.05);
+}
+
+.arrow__btn_rek {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  width: 80px;
+  padding: 15px 20px 110px 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.arrow__btn_rek:nth-of-type(1) {
+    top:0; bottom:0; left:0;
+  }
+.arrow__btn_rek:nth-of-type(2) {
+    top:0; bottom:0; right: 0;
+  }
+
+/* ========================================== */
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -165,6 +223,15 @@ body {
   overflow-x: auto;
   overflow-x: hidden;
   display: flex;
+}
+
+h2 {
+  color: white;
+}
+
+.text-movie-view1 p{
+  color: grey;
+  font-size: 14px;
 }
 
 /* .movie-view-thumbnail::-webkit-scrollbar {

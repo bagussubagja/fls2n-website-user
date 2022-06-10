@@ -150,7 +150,7 @@ $result = mysqli_query($connect, "SELECT * FROM profile WHERE id_login = '" . $_
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="container-profile">';
-                    echo "<a href='../index.php?id=" . $row['nama_profile'] . "'>";
+                    echo "<a href='../index.php?id_profile=" . $row['id_profile'] . "&&nama=" . $row['nama_profile'] . "'>";
                     echo '<div class="profile-item">';
                     echo '<img src="../asset/image/bagus.png" alt="">';
                     echo '<p style="color: white;">' . $row['nama_profile'] . '</p>';
