@@ -1,21 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3,100%);
+  overflow:hidden;
+  scroll-behavior: smooth;
+}
+
+section {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin: 10px 0;
+  padding-left: 40px;
+}
+
+.item_kj {
+  padding: 0 2px;
+  transition: 250ms all;      
+  text-decoration: none;
+}
+
+.item_kj img {
+  width: 380px;
+  height: 209px;
+  border-radius: 20px;
+  margin-right: 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+.item_kj:hover { 
+  margin: 0 40px;
+  transform: scale(1.05);
+}
+
 * {
-  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #121212;
-  color: white;
+}
+
+p {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ContainerMain {
+  width: auto;
+  height: 100vh;
+  background-image: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 1) 0%,
+      rgba(18, 18, 18, 0) 75%
+  ),
+  url("assets/image/main-bg.png");
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .navbar {
   width: 100%;
   height: 50px;
   position: fixed;
-  color: white;
   z-index: 3;
   background: rgb(18, 18, 18);
   background: linear-gradient(
@@ -23,140 +76,92 @@ body {
     rgba(18, 18, 18, 1) 0%,
     rgba(18, 18, 18, 0) 90%
   );
-  top: 0px;
 }
 
+
 .navbar > img {
-  width: 28px;
-  height: 28px;
-  padding: 12px 0px 0px 12px;
+  width: 40px;
+  height: 40px;
+  padding: 7px 0px 0px 7px;
 }
 
 .nav {
   float: right;
   display: flex;
-  margin-right: -60px;
+  padding-top: 15px;
 }
 
-.navbar > ul {
+.navbar  ul {
   float: right;
 }
 
 .navbar ul li {
-  font-size: 14px;
-  text-decoration: none;
   list-style-type: none;
-  padding-right: 25px;
-  color: #f1f1f1;
 }
 
 .navbar ul li a {
+  font-size: 14px;
+  color: #f1f1f1;
+  padding-right: 25px;
   text-decoration: none;
+}
+
+.info {
+  margin-bottom: 100px;
   color: white;
+  width: 650px;
+  padding-top: 10pc;
+  padding-left: 60px;
 }
 
-.navbar ul li a:hover {
+.info h1 {
+  font-size: 65px;
+}
+
+.judul h2 {
+  padding-left: 40px;
+}
+
+.movie-desc {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #aaaaaa;
+}
+
+.movie-duration {
+  margin-top: 20px;
+}
+
+.kumpulanjuara {
+  overflow: hidden;
+  float: left;
+  width: 100%;
+}
+
+h2 {
+  color: white;
   text-decoration: none;
-  color: #4149df;
 }
 
-.header {
-  padding-top: 70px;
-  width: 100%;
-  height: 400px;
-  float: left; 
-}
-
-.header > img {
-  width: 25%;
-  height: 9 0%;
-  float: right;
-  margin-top: -265px;
-  margin-right: 160px;
-}
-
-.header > h1,
-.header > p {
-  padding-left: 120px;
-}
-
-.header p {
-  color: grey;
-}
-
-.header > h1 {
-  margin-top: 120px;
-}
-
-.section1,
-.section1text,
-.section2text {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.text1 > p {
-  margin-top: -17px;
-}
-
-.video1 {
-  background-color: white;
-  height: 180px;
-  width: 22%;
-  border-radius: 23px;
-}
-
-.video1 img {
-  height: 180px;
-  width: 100%;
-  border-radius: 23px;
-}
-
-.section2 {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 0px;
-}
-
-.text1 {
-  height: 140px;
-  width: 22%;
-  padding-left: 20px;
-}
-
-.text1 p {
-  color: grey;
-}
-
-.container > h2 {
-  margin-left: 40px;
-  padding-top: 30px;
-}
 
 .footer {
   height: 60vh;
   color: white;
-  margin: 100px 0px 0px 0px;
-}
-
-.footer2 ul > li > span,
-.footer3 ul > li > span {
-  color: #92989f;
+  margin: 70px 0px 0px 0px;
+  width: 100%;
+  float: left;
 }
 
 .footer-up {
   height: 300px;
-  display: flex;
-  justify-content: space-around;
+  margin: 0px 0px 20px 0px;
 }
 
 .footer1 {
   padding: 0px 50px 0px 50px;
-  /* float: left; */
-  margin-left: 5%;
+  float: left;
   position: relative;
-  width: 60%;
+  width: 40%;
 }
 
 .footer li {
@@ -165,29 +170,33 @@ body {
   margin: 0px 0px 15px 0px;
 }
 
+.footer li a {
+  color:#f1f1f1;
+  text-decoration: none;
+}
+
 .footer1 span {
   width: 30px;
   height: 30px;
-  /* float: left; */
+  float: left;
 }
 
 .footer1 img {
   width: 30px;
   height: 30px;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .footer2 {
-  /* float: left; */
+  float: left;
   position: relative;
-  width: 20%;
+  width: 30%;
 }
 
 .footer3 {
-  /* float: left; */
+  float: left;
   position: relative;
   width: 30%;
-  margin-left: 150px;
 }
 
 .footer-bottom {
@@ -195,6 +204,102 @@ body {
   height: 50px;
 }
 
-.footer-bottom p{
-  color: grey;
+.action {
+  position: relative;
+  padding: 10px 0px 0px 25px;
+  right: 30px;
+}
+
+.action .profile {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action .menu {
+  position: absolute;
+  top: 120px;
+  right: -22px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active {
+  top: 60px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5em;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 16px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu ul li i {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.ico{
+  color: #121212;
+}
+
+.action .menu ul li:hover i {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #ff5d94;
 }

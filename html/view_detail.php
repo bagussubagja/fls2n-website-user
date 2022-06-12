@@ -9,12 +9,12 @@ if (!isset($_SESSION['username'])) {
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  $data = "SELECT * FROM movies WHERE id = $id";
-  $result_view = $connect->query($data);
+  $data = "SELECT * FROM `movies` WHERE `id` = $id";
+  $result_view = mysqli_query($connect, $data);
 }
 
-$query5 = "SELECT * FROM movies limit 16,4";
-$query6 = "SELECT * FROM movies limit 20,3";
+$query5 = "SELECT * FROM movies limit 1,4";
+$query6 = "SELECT * FROM movies limit 6,3";
 $resultview_rek1 = $connect->query($query5);
 $resultview_rek2 = $connect->query($query6);
 
@@ -34,30 +34,46 @@ $resultview_rek2 = $connect->query($query6);
 <body>
   <div class="navbar">
     <img src="../assets/image/logo-rounded.png" alt="Logo" />
-    <ul>
-      <li>
-        <!-- <img src="image/5943911.png" alt="" width="40px" height="40px" /> -->
-      </li>
+    <!-- <ul>
+      <div class="action">
+        <div class="profile" onclick="menuToggle();">
+          <img src="/assets/image/alif.png" />
+        </div>
+        <div class="menu">
+          <ul>
+            <li style="color: black; justify-content:center;"></li>
+            <li>
+              <i class="fa-solid fa-user ico"></i><a href="#">My profile</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-user-pen ico"></i><a href="#">Edit profile</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-gear ico"></i><a href="#">Setting</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-arrow-right-from-bracket ico"></i><a href="/API/logout.php">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <li></li>
-    </ul>
+    </ul> -->
     <ul class="nav">
-      <li><a href="./index.php">Home</a></li>
-      <li><a href="./about_us.html">About</a></li>
-      <li><a href="">Movies</a></li>
-      <li><a href="">Watchlist</a></li>
-      <li><img src="assets/image/Notification.png" alt="" /></li>
-      <li><img src="assets/image/Search.png" alt="" /></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="./html/about_us.html">About</a></li>
+      <li><a href="./html/kategori2.php">Movies</a></li>
     </ul>
   </div>
 
   <!-- container-main -->
   <div class="ContainerMain">
     <?php
-    while ($row = $result_view->fetch_assoc()) {
+    while ($row = $result_view->fetch_array()) {
 
     ?>
       <div class="Video">
-        <iframe width="1350" height="768" src="<?php echo $row['link'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="1376" height="768" src="<?php echo $row['embedded_link'] ?>" frameborder="0"></iframe>
         <div class="info">
           <div class="test">
             <h1><?php echo $row['name'];
@@ -66,7 +82,6 @@ $resultview_rek2 = $connect->query($query6);
 
                 ?></h3>
           </div>
-          <i class="icron"><img src="../assets/image/lope.png" alt="" /></i>
         </div>
         <div class="desc-mov">
           <h2>Deskripsi</h2>
@@ -81,8 +96,7 @@ $resultview_rek2 = $connect->query($query6);
 
   <div class="rekomendasi">
     <div class="section">
-      <div class="see-more"><a href="./html/kategori2.html">See More...</a>
-      </div>
+
       <h2>Rekomendasi</h2>
       <div class="wrapper">
         <section id="section1_rek">
@@ -90,13 +104,15 @@ $resultview_rek2 = $connect->query($query6);
           <?php
           while ($row = $resultview_rek1->fetch_assoc()) {
             echo '<div class="item_kj">';
-            echo '<img src="../' . $row['thumbnail'] . ' " alt="" />';
+            echo '<a href="view_detail.php?id=' . $row['id'] . '">';
+            echo '<img src="' . $row['thumbnail'] . ' " alt="" />';
             echo '<div class="text-movie-view1">';
             echo "<h2>" . $row['name'] . "</h2>";
             echo "<p>" . $row['archievement'] . "</p>";
             echo "<p>" . $row['year'] . " - " . $row['duration'];
             echo "</p>";
             echo '</div>';
+            echo '</a>';
             echo '</div>';
           }
           ?>
@@ -107,18 +123,15 @@ $resultview_rek2 = $connect->query($query6);
           <?php
           while ($row = $resultview_rek2->fetch_assoc()) {
             echo '<div class="item_kj">';
+            echo '<a href="view_detail.php?id=' . $row['id'] . '">';
             echo '<img src="' . $row['thumbnail'] . '" />';
             echo '<div class="text-movie-view1">';
             echo "<h2>" . $row['name'] . "</h2>";
             echo "<p>" . $row['archievement'] . "</p>";
             echo "<p>" . $row['year'] . " - " . $row['duration'];
-            echo "<form>";
-            echo "<input type='hidden' name='id_profile' value'" . $temp_profName . "'>";
-            echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-            echo "<button type='submit'>Tambah Ke Favorite</button>";
-            echo "</form>";
             echo "</p>";
             echo '</div>';
+            echo '</a>';
             echo '</div>';
           }
           ?>
@@ -135,10 +148,10 @@ $resultview_rek2 = $connect->query($query6);
           <li>
             <p>Sebuah website yang menampung film pendek karya anak bangsa dalam ajang Festival Lomba Seni dan Sastra Nasional.</p>
           </li>
-          <li><span><img src="assets/image/Mail.png" alt="IconFooter"></span>
+          <li><span><img src="../assets/image/Mail.png" alt="IconFooter"></span>
             <p>GSF-Team@mail.com</p>
           </li>
-          <li><span><img src="assets/image/Phone.png" alt="IconFooter"></span>
+          <li><span><img src="../assets/image/Phone.png" alt="IconFooter"></span>
             <p>+ 12 3456 7890</p>
           </li>
         </ul>

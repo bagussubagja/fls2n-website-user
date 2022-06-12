@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
   $result = mysqli_query($connect, $query);
   if ($result) {
     echo "<script>alert('Berhasil mendaftar. Silahkan Login');</script>";
-    header("Location: /html/login.html");
+    echo "<script>location.href='login.php';</script>";
   } else {
     echo "<script>alert('Gagal mendaftar. Silahkan coba lagi');</script>";
   }
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 <body>
   <div class="mainlogin">
     <div class="darkbg"></div>
-    <div class="containerlogin">
+    <div class="containerlogin" style="padding-bottom: 76px;">
       <h1>Selamat Datang!</h1>
       <p class="tulisan">Daftar - FLS2N Gallery Website</p>
 
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
         <button id="buttonlogin" onclick="daftar()" type="submit" name="submit">Daftar Sekarang</button>
 
       </form>
-      <p>Sudah punya akun? <a href="login.html" class="loginhover">Login</a></p>
+      <p>Sudah punya akun? <a href="login.php" class="loginhover">Login</a></p>
     </div>
   </div>
   <script src="../scripts/script.js"></script>

@@ -6,8 +6,13 @@ if (!isset($_SESSION['username'])) {
     header("Location: /html/login.php");
 }
 
-$result = mysqli_query($connect, "SELECT * FROM profile WHERE id_login = '" . $_SESSION['id_login'] . "'");
+$result = mysqli_query($connect, "SELECT * FROM profile WHERE id_login = '" . $_SESSION['id_login'] . "' limit 3");
+
+if(mysqli_num_rows($result) > 3 ){
+    echo "<script>alert('You can only add 3 profiles');</script>";
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -152,7 +157,7 @@ $result = mysqli_query($connect, "SELECT * FROM profile WHERE id_login = '" . $_
                     echo '<div class="container-profile">';
                     echo "<a href='../index.php?id_profile=" . $row['id_profile'] . "&&nama=" . $row['nama_profile'] . "'>";
                     echo '<div class="profile-item">';
-                    echo '<img src="../asset/image/bagus.png" alt="">';
+                    echo '<img src="../assets/image/foto.png" alt="">';
                     echo '<p style="color: white;">' . $row['nama_profile'] . '</p>';
                     echo '</div>';
                     echo '</a>';
