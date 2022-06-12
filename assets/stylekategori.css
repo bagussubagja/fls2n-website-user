@@ -161,7 +161,7 @@ h2 {
   padding: 0px 50px 0px 50px;
   float: left;
   position: relative;
-  width: 40%;
+  width: 70%;
 }
 
 .footer li {
@@ -188,12 +188,6 @@ h2 {
 }
 
 .footer2 {
-  float: left;
-  position: relative;
-  width: 30%;
-}
-
-.footer3 {
   float: left;
   position: relative;
   width: 30%;
@@ -302,4 +296,9 @@ h2 {
 
 .action .menu ul li:hover a {
   color: #ff5d94;
+}
+
+.navbar ul li a:hover {
+  text-decoration: none;
+  color: #4149df;
 }

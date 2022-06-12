@@ -70,6 +70,11 @@ $result6 = $connect->query($query6);
 
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+    a{
+      text-decoration: none;
+    }
+  </style>
 
 <head>
   <meta charset="UTF-8" />
@@ -145,7 +150,7 @@ $result6 = $connect->query($query6);
                 echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
                 echo "<form method='POST'>";
                 echo "<input type='hidden' name='id_favorite' value='" . $row['id_favorite'] . "' >";
-                echo "<button type='submit' name='hapusFav'>Hapus Favorite</button>";
+                echo "<button type='submit' name='hapusFav' class='button-3'>Hapus Favorite</button>";
                 echo "</form>";
                 echo '</div>';
                 echo '</a>';
@@ -165,6 +170,10 @@ $result6 = $connect->query($query6);
                 echo "<h2>" . $row['name'] . "</h2>";
                 echo "<p>" . $row['archievement'] . "</p>";
                 echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+                echo "<form method='POST'>";
+                echo "<input type='hidden' name='id_favorite' value='" . $row['id_favorite'] . "' >";
+                echo "<button type='submit' name='hapusFav' class='button-3'>Hapus Favorite</button>";
+                echo "</form>";
                 echo '</div>';
                 echo '</a>';
                 echo '</div>';
@@ -195,7 +204,7 @@ $result6 = $connect->query($query6);
               echo "<p>" . $row['year'] . " - " . $row['duration'];
               echo "<form method='POST'>";
               echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "<button type='submit' class='button-3'>Tambah Ke Favorite</button>";
               echo "</form>";
               echo "</p>";
               echo '</div>';
@@ -218,7 +227,7 @@ $result6 = $connect->query($query6);
               echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
               echo "<form method='POST'>";
               echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "<button type='submit' class='button-3'>Tambah Ke Favorite</button>";
               echo "</form>";
               echo '</div>';
               echo '</a>';
@@ -249,7 +258,7 @@ $result6 = $connect->query($query6);
               echo "<p>" . $row['year'] . " - " . $row['duration'];
               echo "<form method='POST'>";
               echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "<button type='submit' class='button-3'>Tambah Ke Favorite</button>";
               echo "</form>";
               echo "</p>";
               echo '</div>';
@@ -272,7 +281,7 @@ $result6 = $connect->query($query6);
               echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
               echo "<form method='POST'>";
               echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "<button type='submit' class='button-3'>Tambah Ke Favorite</button>";
               echo "</form>";
               echo '</div>';
               echo '</a>';
@@ -303,7 +312,7 @@ $result6 = $connect->query($query6);
               echo "<p>" . $row['year'] . " - " . $row['duration'];
               echo "<form method='POST'>";
               echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "<button type='submit' class='button-3'>Tambah Ke Favorite</button>";
               echo "</form>";
               echo "</p>";
               echo '</div>';
@@ -325,7 +334,7 @@ $result6 = $connect->query($query6);
               echo "<p>" . $row['year'] . " - " . $row['duration'];
               echo "<form method='POST'>";
               echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
-              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "<button type='submit' class='button-3'>Tambah Ke Favorite</button>";
               echo "</form>";
               echo "</p>";
               echo '</div>';
@@ -344,10 +353,10 @@ $result6 = $connect->query($query6);
             <li>
               <p>Sebuah website yang menampung film pendek karya anak bangsa dalam ajang Festival Lomba Seni dan Sastra Nasional.</p>
             </li>
-            <li><span><img src="assets/image/Mail.png" alt="IconFooter"></span>
+            <li><span><img src="./assets/image/Mail.png" alt="IconFooter"></span>
               <p>GSF-Team@mail.com</p>
             </li>
-            <li><span><img src="assets/image/Phone.png" alt="IconFooter"></span>
+            <li><span><img src="./assets/image/Phone.png" alt="IconFooter"></span>
               <p>+ 12 3456 7890</p>
             </li>
           </ul>
@@ -358,14 +367,6 @@ $result6 = $connect->query($query6);
             <li><a href="https://www.instagram.com/fls2n_kemdikbud/">Instagram FLS2N Kemdikbud</a></li>
             <li><a href="https://www.youtube.com/c/KEMENDIKBUDRI2021">Youtube Kemdikbud RI</a></li>
             <li><a href="https://linktr.ee/pusprenassmk">Juknis FLS2N SMK 2022</a></li>
-          </ul>
-        </div>
-        <div class="footer3">
-          <ul>
-            <li>Company</li>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Partners</li>
           </ul>
         </div>
       </div>

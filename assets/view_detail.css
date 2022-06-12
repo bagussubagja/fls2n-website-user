@@ -234,50 +234,6 @@ h2 {
   font-size: 14px;
 }
 
-/* .movie-view-thumbnail::-webkit-scrollbar {
-  width: 1em;
-}
-
-.movie-view-thumbnail::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.movie-view-thumbnail::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey; */
-/* } */
-
-/* Caption text */
-/* .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-.active,
-.dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-/* .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-} */ 
-
 .footer {
   height: 60vh;
   color: white;
@@ -295,7 +251,7 @@ h2 {
   /* float: left; */
   margin-left: 5%;
   position: relative;
-  width: 60%;
+  width: 70%;
 }
 
 .footer li {
@@ -319,14 +275,7 @@ h2 {
 .footer2 {
   /* float: left; */
   position: relative;
-  width: 20%;
-}
-
-.footer3 {
-  /* float: left; */
-  position: relative;
   width: 30%;
-  margin-left: 150px;
 }
 
 .footer-bottom {

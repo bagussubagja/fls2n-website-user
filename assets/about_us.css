@@ -255,21 +255,21 @@ body {
 .footer {
   height: 60vh;
   color: white;
-  margin: 100px 0px 0px 0px;
+  margin: 70px 0px 0px 0px;
+  width: 100%;
+  float: left;
 }
 
 .footer-up {
   height: 300px;
-  display: flex;
-  justify-content: space-around;
+  margin: 0px 0px 20px 0px;
 }
 
 .footer1 {
   padding: 0px 50px 0px 50px;
-  /* float: left; */
-  margin-left: 5%;
+  float: left;
   position: relative;
-  width: 60%;
+  width: 70%;
 }
 
 .footer li {
@@ -278,29 +278,27 @@ body {
   margin: 0px 0px 15px 0px;
 }
 
+.footer li a {
+  color:#f1f1f1;
+  text-decoration: none;
+}
+
 .footer1 span {
   width: 30px;
   height: 30px;
-  /* float: left; */
+  float: left;
 }
 
 .footer1 img {
   width: 30px;
   height: 30px;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .footer2 {
-  /* float: left; */
-  position: relative;
-  width: 20%;
-}
-
-.footer3 {
-  /* float: left; */
+  float: left;
   position: relative;
   width: 30%;
-  margin-left: 150px;
 }
 
 .footer-bottom {
@@ -360,4 +358,104 @@ body {
 
 .footer-bottom p{
   color: grey;
+}
+
+.action {
+  position: relative;
+  padding: 10px 0px 0px 12px;
+  right: 30px;
+}
+
+.action .profile {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action .menu {
+  position: absolute;
+  top: 120px;
+  right: -22px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active {
+  top: 60px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5em;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 16px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu ul li i {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.ico{
+  color: #121212;
+}
+
+.action .menu ul li:hover i {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #ff5d94;
 }

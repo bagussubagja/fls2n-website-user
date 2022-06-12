@@ -18,6 +18,12 @@ $resultKategori3 = $connect->query($queryKategori3);
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+  a{
+    text-decoration: none;
+  }
+</style>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -117,10 +123,10 @@ $resultKategori3 = $connect->query($queryKategori3);
             <li>
               <p>Sebuah website yang menampung film pendek karya anak bangsa dalam ajang Festival Lomba Seni dan Sastra Nasional.</p>
             </li>
-            <li><span><img src="assets/image/Mail.png" alt="IconFooter"></span>
+            <li><span><img src="../assets/image/Mail.png" alt="IconFooter"></span>
               <p>GSF-Team@mail.com</p>
             </li>
-            <li><span><img src="assets/image/Phone.png" alt="IconFooter"></span>
+            <li><span><img src="../assets/image/Phone.png" alt="IconFooter"></span>
               <p>+ 12 3456 7890</p>
             </li>
           </ul>
@@ -131,14 +137,6 @@ $resultKategori3 = $connect->query($queryKategori3);
             <li><a href="https://www.instagram.com/fls2n_kemdikbud/">Instagram FLS2N Kemdikbud</a></li>
             <li><a href="https://www.youtube.com/c/KEMENDIKBUDRI2021">Youtube Kemdikbud RI</a></li>
             <li><a href="https://linktr.ee/pusprenassmk">Juknis FLS2N SMK 2022</a></li>
-          </ul>
-        </div>
-        <div class="footer3">
-          <ul>
-            <li>Company</li>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Partners</li>
           </ul>
         </div>
       </div>

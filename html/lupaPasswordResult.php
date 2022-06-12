@@ -13,9 +13,9 @@
 <body>
   <div class="mainlogin">
     <div class="darkbg"></div>
-    <div class="containerlogin">
-      <h1 style="padding-bottom:80px;">Password Anda</h1>
-      <h2>
+    <div class="containerlogin" style="height:240px;">
+      <h2 style="margin:25px 0px;">Password Anda</h2>
+      <h1>
         <?php
         session_start();
         if (isset($_SESSION['session_flash'])) {
@@ -28,8 +28,8 @@
             header("Location: ../html/lupaPassword.php");
         }
         ?>
-      </h2>
-      <h3><a href="../html/login.php" class="daftarhover">Login</a></h3>
+      </h1>
+      <h2><a href="../html/login.php" class="daftarhover">Login</a></h2>
     </div>
   </div>
 </body>

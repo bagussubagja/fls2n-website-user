@@ -23,6 +23,12 @@ $resultview_rek2 = $connect->query($query6);
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,35 +40,11 @@ $resultview_rek2 = $connect->query($query6);
 <body>
   <div class="navbar">
     <img src="../assets/image/logo-rounded.png" alt="Logo" />
-    <!-- <ul>
-      <div class="action">
-        <div class="profile" onclick="menuToggle();">
-          <img src="/assets/image/alif.png" />
-        </div>
-        <div class="menu">
-          <ul>
-            <li style="color: black; justify-content:center;"></li>
-            <li>
-              <i class="fa-solid fa-user ico"></i><a href="#">My profile</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-user-pen ico"></i><a href="#">Edit profile</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-gear ico"></i><a href="#">Setting</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-arrow-right-from-bracket ico"></i><a href="/API/logout.php">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <li></li>
-    </ul> -->
+
     <ul class="nav">
-      <li><a href="index.php">Home</a></li>
-      <li><a href="./html/about_us.html">About</a></li>
-      <li><a href="./html/kategori2.php">Movies</a></li>
+      <li><a href="../index.php">Home</a></li>
+      <li><a href="about_us.html">About</a></li>
+      <li><a href="kategori2.php">Movies</a></li>
     </ul>
   </div>
 
@@ -158,18 +140,10 @@ $resultview_rek2 = $connect->query($query6);
       </div>
       <div class="footer2">
         <ul>
-          <li>Juara Film Pendek FLS2N</li>
-          <li>Juara Nasional</li>
-          <li>Juara Provinsi</li>
-          <li>Juara Kabupaten</li>
-        </ul>
-      </div>
-      <div class="footer3">
-        <ul>
-          <li>Company</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Partners</li>
+          <li><a href="https://sma.pusatprestasinasional.kemdikbud.go.id/fls2n/uploads/unduhan/YMTvvaqLWbgc2HwANSUQOz3sk12QchvMn9J77LG9.pdf">Buku Panduan FLS2N 2021</a></li>
+          <li><a href="https://www.instagram.com/fls2n_kemdikbud/">Instagram FLS2N Kemdikbud</a></li>
+          <li><a href="https://www.youtube.com/c/KEMENDIKBUDRI2021">Youtube Kemdikbud RI</a></li>
+          <li><a href="https://linktr.ee/pusprenassmk">Juknis FLS2N SMK 2022</a></li>
         </ul>
       </div>
     </div>
