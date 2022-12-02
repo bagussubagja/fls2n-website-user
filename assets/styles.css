@@ -40,7 +40,7 @@ section {
 
 .item_kj:hover { 
     margin: 0 40px;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .item_bd {
@@ -59,7 +59,7 @@ section {
 
 .item_bd:hover { 
   margin: 0 40px;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
     
 .arrow__btn {
@@ -68,7 +68,7 @@ section {
   text-decoration: none;
   font-size: 6em;
   width: 80px;
-  padding: 20px;
+  padding: 15px 20px 110px 20px;
   text-align: center;
   z-index: 1;
 }
@@ -80,9 +80,48 @@ section {
     top:0; bottom:0; right: 0;
   }
 
+.arrow__btn_bd {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  width: 80px;
+  padding: 85px 20px 220px 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.arrow__btn_bd:nth-of-type(1) {
+    top:0; bottom:0; left:0;
+  }
+.arrow__btn_bd:nth-of-type(2) {
+    top:0; bottom:0; right: 0;
+  }
+
+.arrow__btn_rek {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  width: 80px;
+  padding: 15px 20px 110px 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.arrow__btn_rek:nth-of-type(1) {
+    top:0; bottom:0; left:0;
+  }
+.arrow__btn_rek:nth-of-type(2) {
+    top:0; bottom:0; right: 0;
+  }
+
 /* Remove the arrow for Mobile */
 @media only screen and (max-width: 600px) {
   a.arrow__btn {
+    display:none;
+  }
+  a.arrow__btn_bd{
     display:none;
   }
 }

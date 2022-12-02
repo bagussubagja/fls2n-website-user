@@ -25,7 +25,7 @@
         <input type="text" name="username" id="loginusername" class="inputform" placeholder="Username" required />
         <br />
         <input type="password" name="password" id="loginpassword" class="inputform" placeholder="Password" required />
-        <p class="forgot"><a href="lupaPassword.php" class="daftarhover">Lupa kata sandi?</a></p>
+        <p class="forgot"><a href="" class="daftarhover">Lupa kata sandi?</a></p>
 
         <button id="buttonlogin" type="submit" onclick="validasi()">
           Masuk Sekarang

@@ -1,13 +1,30 @@
 <?php
 
+include_once './API/db.php';
+include_once './API/proses_db_index.php';
+
 session_start();
 if (!isset($_SESSION['username'])) {
   header("Location: /html/login.php");
 }
-  $temp_profName = $_GET['id'];
-  $_SESSION['profName'] = $temp_profName;
-  include_once './API/db.php';
-  include_once './API/proses_db_index.php';
+
+$temp_profName = $_GET['id_profile'];
+$_SESSION['profName'] = $temp_profName;
+// if (isset($_POST['submit'])) {
+//   $id_movie = $_POST['id_movie'];
+
+$query = "SELECT * FROM movies limit 4";
+$query2 = "SELECT * FROM movies limit 4,4";
+$query3 = "SELECT * FROM movies limit 8,4";
+$query4 = "SELECT * FROM movies limit 12,4";
+$query5 = "SELECT * FROM movies limit 16,4";
+$query6 = "SELECT * FROM movies limit 20,3";
+$result = $connect->query($query);
+$result2 = $connect->query($query2);
+$result3 = $connect->query($query3);
+$result4 = $connect->query($query4);
+$result5 = $connect->query($query5);
+$result6 = $connect->query($query6);
 ?>
 
 <!DOCTYPE html>
@@ -80,105 +97,44 @@ if (!isset($_SESSION['username'])) {
         <div class="wrapper">
           <section id="section1_kj">
             <a href="#section2_kj" class="arrow__btn">‹</a>
-            <div class="item_kj">
-              <img src="assets/image/titikbalik.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj1)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>
-            </div>
-            <div class="item_kj">
-              <img src="assets/image/robot.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj2)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      
-            </div>
-            <div class="item_kj">
-              <img src="assets/image/titikterang.png"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj3)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      
-            </div>
-            <div class="item_kj">
-              <img src="assets/image/Olak.png"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj4)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      
-            </div>
+            <?php
+            while ($row = $result->fetch_assoc()) {
+              echo '<div class="item_kj">';
+              echo '<img src="' . $row['thumbnail'] . '" />';
+              echo '<div class="text-movie-view1">';
+              echo "<h2>" . $row['name'] . "</h2>";
+              echo "<p>" . $row['archievement'] . "</p>";
+              echo "<p>" . $row['year'] . " - " . $row['duration'];
+              echo "<form method='POST'>";
+              echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
+              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "</form>";
+              echo "</p>";
+              echo '</div>';
+              echo '</div>';
+            }
+            ?>
             <a href="#section2_kj" class="arrow__btn">›</a>
           </section>
           <section id="section2_kj">
             <a href="#section1_kj" class="arrow__btn">‹</a>
-            <div class="item_kj">
-              <img src="assets/image/janggal.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj5)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>
-            </div>
-            <div class="item_kj">
-              <img src="assets/image/patuisalang.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj6)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>
-            </div>
-            <div class="item_kj">
-              <img src="assets/image/garis akhir.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_kj7)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      </div>
-            <div class="item_kj">
-              <img src="assets/image/bentala.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_kj8)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>
-              </div>
+            <?php
+            while ($row = $result2->fetch_assoc()) {
+              echo '<div class="item_kj">';
+              echo '<img src="' . $row['thumbnail'] . '" />';
+              echo '<div class="text-movie-view1">';
+              echo "<h2>" . $row['name'] . "</h2>";
+              echo "<p>" . $row['archievement'] . "</p>";
+              echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+              echo "<form>";
+              echo "<input type='hidden' name='id_profile' value'" . $temp_profName . "'>";
+              echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
+              echo "<button type='submit' name='submit'>Tambah Ke Favorite</button>";
+              echo "</form>";
+              echo '</div>';
+              echo '</div>';
+            }
+            ?>
             <a href="#section1_kj" class="arrow__btn">›</a>
           </section>
         </div>
@@ -191,222 +147,103 @@ if (!isset($_SESSION['username'])) {
         <h2>Baru Ditambahkan</h2>
         <div class="wrapper">
           <section id="section1_bd">
-            <a href="#section2_bd" class="arrow__btn">‹</a>
-            <div class="item_bd">
-              <img src="assets/image/baur.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd1)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>
-            </div>
-            <div class="item_bd">
-              <img src="assets/image/akudankamu.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd2)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      
-            </div>
-            <div class="item_bd">
-              <img src="assets/image/berproses.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd3)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      
-            </div>
-            <div class="item_bd">
-              <img src="assets/image/isoman.png"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd4)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      
-            </div>
-            <a href="#section2_bd" class="arrow__btn">›</a>
+            <a href="#section2_bd" class="arrow__btn_bd">‹</a>
+            <?php
+            while ($row = $result3->fetch_assoc()) {
+              echo '<div class="item_bd">';
+              echo '<img src="' . $row['thumbnail'] . '" />';
+              echo '<div class="text-movie-view1">';
+              echo "<h2>" . $row['name'] . "</h2>";
+              echo "<p>" . $row['archievement'] . "</p>";
+              echo "<p>" . $row['year'] . " - " . $row['duration'];
+              echo "<form>";
+              echo "<input type='hidden' name='id_profile' value'" . $temp_profName . "'>";
+              echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
+              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "</form>";
+              echo "</p>";
+              echo '</div>';
+              echo '</div>';
+            }
+            ?>
+            <a href="#section2_bd" class="arrow__btn_bd">›</a>
           </section>
           <section id="section2_bd">
-            <a href="#section1_bd" class="arrow__btn">‹</a>
-            <div class="item_bd">
-              <img src="assets/image/jendela dunia.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd5)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>
-            </div>
-            <div class="item_bd">
-              <img src="assets/image/new-shoes.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd6)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>
-            </div>
-            <div class="item_bd">
-              <img src="assets/image/change.jpg"/>
-              <div class="text-movie-view1">
-                <?php
-                while ($row = mysqli_fetch_assoc($query_bd7)) {
-                  echo "<h2>" . $row['name'] . "</h2>";
-                  echo "<p>" . $row['archievement'] . "</p>";
-                  echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                }
-                ?>
-              </div>      </div>
-            <div class="item_bd">
-              <img src="assets/image/sukma.png"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_bd8)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>
-            </div>
-            <a href="#section1_bd" class="arrow__btn">›</a>
+            <a href="#section1_bd" class="arrow__btn_bd">‹</a>
+            <?php
+            while ($row = $result4->fetch_assoc()) {
+              echo '<div class="item_bd">';
+              echo '<img src="' . $row['thumbnail'] . '" />';
+              echo '<div class="text-movie-view1">';
+              echo "<h2>" . $row['name'] . "</h2>";
+              echo "<p>" . $row['archievement'] . "</p>";
+              echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
+              echo "<form>";
+              echo "<input type='hidden' name='id_profile' value'" . $temp_profName . "'>";
+              echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
+              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "</form>";
+              echo '</div>';
+              echo '</div>';
+            }
+            ?>
+            <a href="#section1_bd" class="arrow__btn_bd">›</a>
           </section>
         </div>
       </div>
     </div>
     <div class="rekomendasi">
       <div class="section">
-          <div class="see-more"><a href="./html/kategori2.html">See More...</a>
-          </div>
-          <h2>Rekomendasi</h2>
-          <div class="wrapper">
-            <section id="section1_rek">
-              <a href="#section2_rek" class="arrow__btn">‹</a>
-              <div class="item_kj">
-                <img src="assets/image/moral.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek1)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>
-              </div>
-              <div class="item_kj">
-                <img src="assets/image/majutanpabatas.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek2)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>      
-              </div>
-              <div class="item_kj">
-                <img src="assets/image/abadi.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek3)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>      
-              </div>
-              <div class="item_kj">
-                <img src="assets/image/ngajenan.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek4)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>      
-              </div>
-              <a href="#section2_rek" class="arrow__btn">›</a>
-            </section>
-            <section id="section2_rek">
-              <a href="#section1_rek" class="arrow__btn">‹</a>
-              <div class="item_kj">
-                <img src="assets/image/sukma.png"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek5)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>
-              </div>
-              <div class="item_kj">
-                <img src="assets/image/change.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek6)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>
-              </div>
-              <div class="item_kj">
-                <img src="assets/image/janggal.jpg"/>
-                <div class="text-movie-view1">
-                  <?php
-                  while ($row = mysqli_fetch_assoc($query_rek7)) {
-                    echo "<h2>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['archievement'] . "</p>";
-                    echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                  }
-                  ?>
-                </div>      </div>
-              <div class="item_kj">
-                <img src="assets/image/patuisalang.jpg"/>
-                  <div class="text-movie-view1">
-                    <?php
-                    while ($row = mysqli_fetch_assoc($query_rek8)) {
-                      echo "<h2>" . $row['name'] . "</h2>";
-                      echo "<p>" . $row['archievement'] . "</p>";
-                      echo "<p>" . $row['year'] . " - " . $row['duration'] . "</p>";
-                    }
-                    ?>
-                  </div>
-              </div>
-              <a href="#section1_rek" class="arrow__btn">›</a>
-            </section>
-          </div>
+        <div class="see-more"><a href="./html/kategori2.html">See More...</a>
         </div>
+        <h2>Rekomendasi</h2>
+        <div class="wrapper">
+          <section id="section1_rek">
+            <a href="#section2_rek" class="arrow__btn_rek">‹</a>
+            <?php
+            while ($row = $result5->fetch_assoc()) {
+              echo '<div class="item_kj">';
+              echo '<img src="' . $row['thumbnail'] . '" />';
+              echo '<div class="text-movie-view1">';
+              echo "<h2>" . $row['name'] . "</h2>";
+              echo "<p>" . $row['archievement'] . "</p>";
+              echo "<p>" . $row['year'] . " - " . $row['duration'];
+              echo "<form>";
+              echo "<input type='hidden' name='id_profile' value'" . $temp_profName . "'>";
+              echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
+              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "</form>";
+              echo "</p>";
+              echo '</div>';
+              echo '</div>';
+            }
+            ?>
+            <a href="#section2_rek" class="arrow__btn_rek">›</a>
+          </section>
+          <section id="section2_rek">
+            <a href="#section1_rek" class="arrow__btn_rek">‹</a>
+            <?php
+            while ($row = $result6->fetch_assoc()) {
+              echo '<div class="item_kj">';
+              echo '<img src="' . $row['thumbnail'] . '" />';
+              echo '<div class="text-movie-view1">';
+              echo "<h2>" . $row['name'] . "</h2>";
+              echo "<p>" . $row['archievement'] . "</p>";
+              echo "<p>" . $row['year'] . " - " . $row['duration'];
+              echo "<form>";
+              echo "<input type='hidden' name='id_profile' value'" . $temp_profName . "'>";
+              echo "<input type='hidden' name='id_movie' value='" . $row['id'] . "' >";
+              echo "<button type='submit'>Tambah Ke Favorite</button>";
+              echo "</form>";
+              echo "</p>";
+              echo '</div>';
+              echo '</div>';
+            }
+            ?>
+            <a href="#section1_rek" class="arrow__btn_rek">›</a>
+          </section>
+        </div>
+      </div>
     </div>
     <div class="footer">
       <div class="footer-up">

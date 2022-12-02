@@ -29,6 +29,6 @@ if ($result > 0) {
     echo "
         <script>
             alert('Username atau Password salah!');
-            window.location.href = '../html/login.html';
+            window.location.href = '../html/login.php';
         </script>";
 }
